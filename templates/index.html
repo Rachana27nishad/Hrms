@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>HRMS Lite</title>
+<link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+
+<body>
+<div id="toast"></div>
+
+<div class="container">
+
+<!-- NAVBAR -->
+<div class="navbar">
+    <button onclick="showSection('dashboard')">Dashboard</button>
+    <button onclick="showSection('employee')">Employee</button>
+    <button onclick="showSection('attendance')">Attendance</button>
+    <button onclick="toggleDark()">🌙 Dark Mode</button>
+</div>
+
+<h1>HRMS Lite</h1>
+
+    <!-- DASHBOARD -->
+<div id="dashboard" class="section active">
+    <h2>Dashboard</h2>
+
+    <div class="dashboard">
+        <div class="card">
+            <h3>Total Employees</h3>
+            <p id="totalEmp">0</p>
+        </div>
+
+        <div class="card">
+            <h3>Total Attendance</h3>
+            <p id="totalAtt">0</p>
+        </div>
+
+        <div class="card">
+            <h3>Present Today</h3>
+            <p id="presentToday">0</p>
+        </div>
+
+        <div class="card">
+            <h3>Absent Today</h3>
+            <p id="absentToday">0</p>
+        </div>
+    </div>
+</div>
+
+</div>
+
+<!-- EMPLOYEE -->
+<div id="employee" class="section">
+<h2>Employee</h2>
+
+<div class="form-grid">
+<input id="emp_id" placeholder="Employee ID">
+<input id="name" placeholder="Name">
+<input id="email" placeholder="Email">
+<input id="dept" placeholder="Department">
+</div>
+
+<button onclick="addOrUpdate()">Save</button>
+<button onclick="clearForm()">Clear</button>
+
+<br><br>
+<input id="search" placeholder="Search..." onkeyup="searchEmp()">
+
+<div id="loader">Loading...</div>
+
+<table>
+<thead>
+<tr>
+<th>ID</th><th>Name</th><th>Email</th><th>Dept</th><th>Action</th>
+</tr>
+</thead>
+<tbody id="empTable"></tbody>
+</table>
+</div>
+
+<!-- ATTENDANCE -->
+<div id="attendance" class="section">
+<h2>Attendance</h2>
+<input id="att_emp_id" placeholder="Employee ID">
+<input type="date" id="date">
+<!-- <select id="status">
+<option>Present</option>
+<option>Absent</option>
+</select> -->
+<select id="status">
+    <option value="">Select Status</option>
+    <option value="Present">Present</option>
+    <option value="Absent">Absent</option>
+  </select>
+  
+<button onclick="markAttendance()">Mark</button>
+
+<h3>View Attendance</h3>
+<input id="view_emp_id" placeholder="Employee ID">
+<button onclick="viewAttendance()">View</button>
+<ul id="attendanceList"></ul>
+</div>
+
+</div>
+<script src="{{ url_for('static', filename='script.js') }}"></script>
+
+
+</body>
+</html>

@@ -1,0 +1,159 @@
+
+:root {
+    --bg: #f4f6fb;
+    --card: white;
+    --text: black;
+    --primary: #4CAF50;
+    --danger: #f44336;
+}
+
+.dark {
+    --bg: #121212;
+    --card: #1f1f1f;
+    --text: white;
+}
+
+body {
+    font-family: Segoe UI, sans-serif;
+    background: var(--bg);
+    margin: 0;
+    padding: 20px;
+    color: var(--text);
+}
+
+/* NAVBAR */
+.navbar {
+    display: flex;
+    gap: 15px;
+    background: var(--primary);
+    padding: 10px;
+    border-radius: 8px;
+}
+
+.navbar button {
+    background: white;
+    color: black;
+}
+
+.container {
+    max-width: 1000px;
+    margin: auto;
+    background: var(--card);
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+}
+
+h1 { text-align:center; }
+
+input, select {
+    padding: 8px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+}
+
+button {
+    padding: 8px 12px;
+    border-radius: 5px;
+    border: none;
+    cursor: pointer;
+    background: var(--primary);
+    color: white;
+}
+
+button:hover { opacity: 0.9; }
+.danger { background: var(--danger); }
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 10px;
+}
+
+th {
+    background: var(--primary);
+    color: white;
+}
+
+td, th {
+    padding: 8px;
+    border: 1px solid #ccc;
+    text-align: center;
+}
+
+#toast {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    padding: 15px;
+    border-radius: 5px;
+    color: white;
+    display: none;
+}
+.success { background: green; }
+.error { background: red; }
+
+#loader {
+    display: none;
+    text-align: center;
+    margin: 10px;
+}
+
+.form-grid {
+    display: grid;
+    grid-template-columns: repeat(4,1fr);
+    gap: 10px;
+}
+.dashboard {
+    display: grid;
+    grid-template-columns: repeat(4,1fr);
+    gap: 15px;
+    margin-top: 20px;
+}
+
+.card {
+    background: linear-gradient(135deg,#4CAF50,#2e7d32);
+    color: white;
+    padding: 20px;
+    border-radius: 12px;
+    text-align: center;
+    box-shadow: 0 6px 15px rgba(0,0,0,0.2);
+}
+
+.card h3 {
+    margin: 0;
+    font-size: 16px;
+}
+
+.card p {
+    font-size: 28px;
+    font-weight: bold;
+    margin-top: 10px;
+}
+/* DARK MODE CARD COLOR FIX */
+.dark .card {
+    background: linear-gradient(135deg, #1e3c72, #2a5298);
+    color: white;
+}
+
+/* DARK MODE NAVBAR FIX */
+.dark .navbar {
+    background: #1e1e1e;
+}
+
+.dark th {
+    background: #2a5298;
+}
+
+/* BUTTON FIX FOR DARK MODE */
+.dark button {
+    background: #2a5298;
+}
+
+.dark .danger {
+    background: #b71c1c;
+}
+
+/* SECTIONS */
+.section { display: none; }
+.section.active { display: block; }
